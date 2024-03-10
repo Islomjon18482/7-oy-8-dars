@@ -3,14 +3,14 @@ import "../App.css"
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function Series() {
     const [data, setData] = useState([]);
   let [reck, setreck] = useState([]);
 
   useEffect(() => {
     const apiKey = "SY1XKDH-Y56MGJ7-NHGRH1T-HBEQ75D";
 
-    fetch("https://api.kinopoisk.dev/v1.4/movie?lists=top250", {
+    fetch("https://api.kinopoisk.dev/v1.4/movie?type=tv-series", {
       headers: {
         "X-API-KEY": apiKey,
       },
@@ -34,7 +34,7 @@ function Home() {
   return (
     <div className='home__wrapper'>
       <div className="slide__bar">
-            <div className="nav__bar">
+      <div className="nav__bar">
               <Link to="/">
                 <img className='home' src="Path.svg"/>
               </Link>
@@ -62,7 +62,7 @@ function Home() {
         </div>
         <div className="main">
         <div className="content-header">
-        <h2 className='p-2 '>Trending</h2>
+        <h2 className='p-2 '>Tv Series</h2>
         <div className="carousel carousel-center w-full p-2  to-transparent rounded-box">
           {data.map((el) => {
             return (
@@ -122,4 +122,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Series

@@ -50,7 +50,7 @@ function Login() {
             console.log(data);
             localStorage.setItem("token", data.accessToken);
             localStorage.setItem("user", JSON.stringify(data));
-            navigate("/home");
+            navigate("/");
           })
           .catch((error) => {
             alert("Bunday foydalanuvchi mavjud emas");
@@ -73,7 +73,7 @@ function Login() {
               {isLoading ? "Loading..." : "Login to your account"}
             </button>
             <p>
-              Already have an account? <Link to="/">Register</Link>
+              Already have an account? <Link to="/register">Register</Link>
             </p>
           </form>
         </div>
